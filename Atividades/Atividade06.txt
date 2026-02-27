@@ -1,0 +1,87 @@
+    Implemente uma classe chamada Carro com os atributos básicos, como modelo, cor e ano. Crie uma instância dessa classe e atribua valores aos seus atributos.
+
+    R:
+    class Carro:
+        modelo = ''
+        cor = ''
+        ano = 0
+
+    carro_lancer = Carro()
+    carro_lancer.modelo = 'lancer'
+    carro_lancer.cor = 'prata'
+    carro_lancer.ano = 2020
+
+    print(vars(carro_lancer))
+
+    Crie uma classe chamada Restaurante com os atributos nome, categoria, ativo e crie mais 2 atributos. Instancie um restaurante e atribua valores aos seus atributos.
+
+    R:
+    class Restaurante:
+        nome = ''
+        categoria = ''
+        ativo = False
+        ano = 0
+        endereco = ''
+
+    restaurante_pizza = Restaurante()
+    restaurante_pizza.nome = 'pavarotti pizza'
+    restaurante_pizza.categoria = 'Pizzaria'
+    restaurante_pizza.ativo = True
+    restaurante_pizza.ano = 2020
+    restaurante_pizza.endereco = 'rua dos loucos n 0'
+
+    print(vars(restaurante_pizza))
+    
+    Modifique a classe Restaurante adicionando um construtor que aceita nome e categoria como parâmetros e inicia ativo como False por padrão. Crie uma instância utilizando o construtor.
+
+    R:
+    class Restaurante:
+
+        restaurantes = []
+
+        def __init__(self, nome, categoria):
+            self.nome = nome
+            self.categoria = categoria
+            Restaurante.restaurantes.append(self)
+
+    restaurante_pizza = Restaurante('pavarotti pizza', 'Pizzaria')
+
+    print(vars(restaurante_pizza))
+    
+    Adicione um método especial __str__ à classe Restaurante para que, ao imprimir uma instância, seja exibida uma mensagem formatada com o nome e a categoria. Exiba essa mensagem para uma instância de restaurante.
+
+    R:
+    class Restaurante:
+
+        restaurantes = []
+
+        def __init__(self, nome, categoria):
+            self.nome = nome
+            self.categoria = categoria
+            Restaurante.restaurantes.append(self)
+    
+        def __str__(self):
+            return f'Nome = {self.nome} | Categoria = {self.categoria}'
+
+    restaurante_pizza = Restaurante('pavarotti pizza', 'Pizzaria')
+
+    print(restaurante_pizza)
+    
+    Crie uma classe chamada Cliente e pense em 4 atributos. Em seguida, instancie 3 objetos desta classe e atribua valores aos seus atributos através de um método construtor.
+
+    R:
+    class Cliente:
+
+        clientes = []
+    
+        def __init__(self, nome, cpf, telefone):
+            self.nome = nome
+            self.cpf = cpf
+            self.telefone = telefone
+            self.status_conta = False
+            Cliente.clientes.append(self)
+
+    cliente_djon = Cliente('Djonathan', '0000000000', '000000000000')
+
+    print(vars(cliente_djon))
+    
