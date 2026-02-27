@@ -94,5 +94,3 @@ def main(): #função principal que contem o programa principal
     
 if __name__ == '__main__': #executa esse codigo apenas se este arquivo não estiver sendo exportado, ou seja, apenas executando ele diretamente
     main()
-
-
