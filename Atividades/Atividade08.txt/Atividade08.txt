@@ -1,0 +1,77 @@
+Exercícios
+
+    Crie uma classe chamada Livro com um construtor que aceita os parâmetros titulo, autor e ano_publicacao. Inicie um atributo chamado disponivel como True por padrão.
+
+    R:
+    class Livro:
+
+    def __init__(self, titulo, autor, ano_publicacao):
+        self.titulo = titulo
+        self.autor = autor
+        self.ano_publicacao = ano_publicacao
+        self.disponivel = True
+
+    Na classe Livro, adicione um método especial str que retorna uma mensagem formatada com o título, autor e ano de publicação do livro. Crie duas instâncias da classe Livro e imprima essas instâncias.
+
+    R:
+    def __str__(self):
+        return f'titulo: {self.titulo} | autor: {self.autor} | Ano de publicação: {self.ano_publicacao}'
+    
+    livro1 = Livro('O Senhor dos Anéis', 'J.R.R. Tolkien', 1954)
+    livro2 = Livro('Dom Casmurro', 'Machado de Assis', 1899)
+    print(livro1)
+    print(livro2)
+
+    Adicione um método de instância chamado emprestar à classe Livro que define o atributo disponivel como False. Crie uma instância da classe, chame o método emprestar e imprima se o livro está disponível ou não.
+
+    R:
+    def emprestar(self):
+        self.disponivel = not self.disponivel
+    
+    livro1 = Livro('O Senhor dos Anéis', 'J.R.R. Tolkien', 1954)
+    print(livro1)
+    livro1.emprestar()
+    print(livro1)
+
+    Adicione um método estático chamado verificar_disponibilidade à classe Livro que recebe um ano como parâmetro e retorna uma lista dos livros disponíveis publicados nesse ano.
+
+    R:
+    def verificar_disponibilidade(ano):
+        for livro in Livro.livros:
+            if livro.ano_publicacao == ano and livro.disponibilidade == True:
+                print(f'{livro.titulo} | {livro.autor} | {livro.ano_publicacao}')
+
+    Crie um arquivo chamado biblioteca.py e importe a classe Livro neste arquivo.
+
+    R:
+    from atividades import livro
+ 
+    No arquivo biblioteca.py, empreste o livro chamando o método emprestar e imprima se o livro está disponível ou não após o empréstimo.
+
+    R:
+    livro8 = Livro("Admirável Mundo Novo", "Aldous Huxley", 1932)
+
+    print(livro8)
+    livro8.emprestar()
+    print(livro8)
+
+    No arquivo biblioteca.py, utilize o método estático verificar_disponibilidade para obter a lista de livros disponíveis publicados em um ano específico.
+
+    R:
+    Livro.verificar_disponibilidade(1605)
+
+    Crie um arquivo chamado main.py, importe a classe Livro e, no arquivo main.py, instancie dois objetos da classe Livro e exiba a mensagem formatada utilizando o método str.
+
+    R:
+    from atividades import Livro
+
+    def main():
+        livro1 = Livro("O Hobbit", "J.R.R. Tolkien", 1937)
+        livro2 = Livro("O Sol é Para Todos", "Harper Lee", 1960)
+
+        print(f'{livro1}\n{livro2}')
+    
+    
+    if __name__ == '__main__':
+        main()
+
