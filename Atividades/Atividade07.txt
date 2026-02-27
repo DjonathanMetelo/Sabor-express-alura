@@ -1,0 +1,92 @@
+Desafios
+
+    Crie uma classe chamada ContaBancaria com um construtor que aceita os parâmetros titular e saldo. Inicie o atributo ativo como False por padrão.
+
+    R:
+    class ContaBancaria:
+
+    contas = []
+
+    def __int__(self, titular, saldo):
+        self.titular = titular
+        self.saldo = saldo
+        self.ativo = False
+        ContaBancaria.contas.append(self)
+
+    Na classe ContaBancaria, adicione um método especial __str__ que retorna uma mensagem formatada com o titular e o saldo da conta. Crie duas instâncias da classe e imprima essas instâncias.
+
+    R:
+    def __str__(self):
+        return f'Titular: {self.titular} | Saldo: R$ {self.saldo}'
+    
+    conta_samuel = ContaBancaria('Samuel', 50)
+    conta_cezar = ContaBancaria('Cezar', 200)
+
+    print(conta_samuel)
+    print(conta_cezar)
+
+    Adicione um método de classe chamado ativar_conta à classe ContaBancaria que define o atributo ativo como True. Crie uma instância da classe, chame o método de classe e imprima o valor de ativo.
+
+    R:
+    def ativar_conta(self):
+        self.ativo = not self.ativo
+    
+    conta_samuel = ContaBancaria('Samuel', 50)
+    conta_cezar = ContaBancaria('Cezar', 200)
+
+    conta_samuel.ativar_conta()
+    print(conta_samuel.ativo)
+
+    Refatore a classe ContaBancaria para utilizar a abordagem "pythonica" na criação de atributos. Utilize propriedades, se necessário.
+
+    R:
+    @property
+    def ativar_conta(self):
+        self.ativo = not self.ativo
+    
+    conta_samuel = ContaBancaria('Samuel', 50)
+    conta_cezar = ContaBancaria('Cezar', 200)
+
+    conta_samuel.ativar_conta
+    print(conta_samuel.ativo)
+
+    Crie uma instância da classe e imprima o valor da propriedade titular.
+
+    R:
+    conta_samuel = ContaBancaria('Samuel', 50)
+    print(conta_samuel.titular)
+
+    Crie uma classe chamada ClienteBanco com um construtor que aceita 5 atributos. Instancie 3 objetos desta classe e atribua valores aos seus atributos através do método construtor.
+
+    R:
+    class ClienteBanco:
+
+    clientes = []
+
+    def __init__(self, titular, numero, saldo, limite, agencia):
+        self.titular = titular
+        self.numero = numero
+        self.saldo = saldo
+        self.limite = limite
+        self.agencia = agencia
+        ClienteBanco.clientes.append(self)
+
+    
+    cliente_ana_silva = ClienteBanco('Ana Silva', '1010-5', 2500.50, 1000.00, '0001')
+    cliente_bruno_souza = ClienteBanco('Bruno Souza', '2020-8', 150.00, 500.00, '0011')
+    cliente_tech_solucoes = ClienteBanco('Tech Soluções LTDA', '5500-1', 50000.00, 20000.00, '0542')
+
+    Crie um método de classe para a conta ClienteBanco.
+
+    R:
+    @classmethod
+    def listar_contas(cls):
+        for cliente in cls.clientes:
+            print(f'{cliente.titular} | {cliente.numero} | {cliente.saldo} | {cliente.limite} | {cliente.agencia}')
+
+    
+    cliente_ana_silva = ClienteBanco('Ana Silva', '1010-5', 2500.50, 1000.00, '0001')
+    cliente_bruno_souza = ClienteBanco('Bruno Souza', '2020-8', 150.00, 500.00, '0011')
+    cliente_tech_solucoes = ClienteBanco('Tech Soluções LTDA', '5500-1', 50000.00, 20000.00, '0542')
+
+    ClienteBanco.listar_contas()
